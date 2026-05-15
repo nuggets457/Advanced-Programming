@@ -1,0 +1,67 @@
+#include <iostream>
+#include "DeviceManager.h"
+
+using namespace std;
+
+// Student Name: Dulina Kodagoda
+// Student ID: [YOUR STUDENT ID]
+//
+// DESIGN PATTERN: Manager Pattern + Composite Pattern + Factory Pattern
+// 
+// This Smart Campus System implements several design patterns:
+//
+// 1. MANAGER PATTERN:
+//    - DeviceManager class acts as the central manager
+//    - Handles all device operations and system control
+//    - Encapsulates complexity of device management
+//    - Single point of contact for the entire system
+//
+// 2. COMPOSITE PATTERN:
+//    - Room class acts as a container for devices
+//    - Devices can be managed individually or as a group through rooms
+//    - Enables hierarchical organization of devices
+//
+// 3. FACTORY PATTERN:
+//    - DeviceManager creates different device types based on user input
+//    - Uses make_unique<DeviceType>() to instantiate devices
+//    - Eliminates the need for explicit 'new' keyword
+//    - Centralizes device creation logic
+//
+// 4. POLYMORPHISM PATTERN:
+//    - Base Device class with virtual methods
+//    - Derived classes override virtual methods
+//    - Methods called through base class pointers
+//    - Enables uniform treatment of different device types
+//    - Eliminates need for type checking or casting
+//
+// KEY FEATURES:
+// - Smart pointers (unique_ptr) for automatic memory management
+// - No memory leaks - all objects cleaned up automatically
+// - No raw 'new' keyword - uses make_unique instead
+// - Full input validation for all user inputs
+// - Comprehensive error handling
+// - Clean separation of concerns (UI, Logic, Data)
+//
+// BENEFITS OF DESIGN PATTERNS USED:
+// - Easy to extend with new device types
+// - Easy to add new functionality
+// - Maintainable and scalable code
+// - Follows SOLID principles
+// - Reduces code duplication
+// - Improves code readability
+
+// Main entry point - starts the entire system
+int main() {
+    // Create device manager instance
+    // Uses smart pointer to ensure cleanup
+    DeviceManager manager;
+
+    // Display main menu and run the system
+    // All logic is encapsulated within DeviceManager
+    manager.DisplayMainMenu();
+
+    // Program exits - smart pointers automatically cleanup memory
+    // No explicit delete needed - RAII principle
+    // This ensures no memory leaks occur
+    return 0;
+}
